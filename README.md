@@ -306,8 +306,6 @@ This project is not affiliated with, endorsed by, or associated with Nokia Corpo
 
 **Aritra Bakshi**
 
-Independent Game Developer
-
 ---
 
 ## License
