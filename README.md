@@ -312,4 +312,4 @@ Independent Game Developer
 
 ## License
 
-Choose and add a license appropriate for your project.
+[Click Here](https://github.com/AritraBakshi/Bounce/blob/264d32c4463a587364a9ca5a0aebb535e1b9799c/LICENSE)
