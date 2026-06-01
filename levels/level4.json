@@ -1,0 +1,361 @@
+{
+  "id": 4,
+  "name": "MAGMA CORE",
+  "theme": 3,
+  "bgMusic": 3,
+  "worldW": 1620,
+  "worldH": 480,
+  "spawn": {
+    "x": 30,
+    "y": 210
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 270,
+      "w": 160,
+      "h": 14,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 200,
+      "y": 255,
+      "w": 70,
+      "h": 12,
+      "type": "moving",
+      "axis": "y",
+      "moveRange": 40,
+      "speed": 1.1,
+      "theme": 3
+    },
+    {
+      "x": 310,
+      "y": 265,
+      "w": 80,
+      "h": 12,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 430,
+      "y": 250,
+      "w": 70,
+      "h": 12,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 540,
+      "y": 235,
+      "w": 60,
+      "h": 12,
+      "type": "crumble",
+      "theme": 3
+    },
+    {
+      "x": 640,
+      "y": 255,
+      "w": 90,
+      "h": 12,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 770,
+      "y": 240,
+      "w": 60,
+      "h": 12,
+      "type": "moving",
+      "axis": "x",
+      "moveRange": 40,
+      "speed": 1.3,
+      "theme": 3
+    },
+    {
+      "x": 870,
+      "y": 255,
+      "w": 90,
+      "h": 12,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 980,
+      "y": 225,
+      "w": 60,
+      "h": 10,
+      "type": "oneWay",
+      "theme": 3
+    },
+    {
+      "x": 1060,
+      "y": 255,
+      "w": 80,
+      "h": 12,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 1180,
+      "y": 245,
+      "w": 60,
+      "h": 12,
+      "type": "moving",
+      "axis": "y",
+      "moveRange": 45,
+      "speed": 1.2,
+      "theme": 3
+    },
+    {
+      "x": 1280,
+      "y": 260,
+      "w": 80,
+      "h": 12,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 1390,
+      "y": 265,
+      "w": 220,
+      "h": 14,
+      "type": "static",
+      "theme": 3
+    },
+    {
+      "x": 0,
+      "y": 450,
+      "w": 1620,
+      "h": 30,
+      "type": "static",
+      "theme": 3
+    }
+  ],
+  "hazards": [
+    {
+      "x": 180,
+      "y": 258,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 618,
+      "y": 243,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 1040,
+      "y": 243,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 460,
+      "y": 220,
+      "w": 20,
+      "h": 18,
+      "type": "electric"
+    },
+    {
+      "x": 950,
+      "y": 215,
+      "w": 20,
+      "h": 18,
+      "type": "electric"
+    },
+    {
+      "x": 380,
+      "y": 330,
+      "w": 28,
+      "h": 28,
+      "type": "crusher",
+      "crushRange": 90,
+      "crushSpeed": 1.6
+    },
+    {
+      "x": 820,
+      "y": 330,
+      "w": 28,
+      "h": 28,
+      "type": "crusher",
+      "crushRange": 90,
+      "crushSpeed": 1.8
+    },
+    {
+      "x": 150,
+      "y": 400,
+      "w": 350,
+      "h": 50,
+      "type": "lava"
+    },
+    {
+      "x": 620,
+      "y": 400,
+      "w": 400,
+      "h": 50,
+      "type": "lava"
+    }
+  ],
+  "collectibles": [
+    {
+      "x": 80,
+      "y": 253,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 235,
+      "y": 234,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 350,
+      "y": 248,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 505,
+      "y": 233,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 522,
+      "y": 217,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 685,
+      "y": 238,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 800,
+      "y": 222,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 910,
+      "y": 238,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 1008,
+      "y": 205,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 1100,
+      "y": 238,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 1215,
+      "y": 228,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 1320,
+      "y": 243,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 1430,
+      "y": 248,
+      "type": "coin"
+    },
+    {
+      "x": 1480,
+      "y": 248,
+      "type": "coin"
+    },
+    {
+      "x": 1530,
+      "y": 248,
+      "type": "coin"
+    },
+    {
+      "x": 430,
+      "y": 230,
+      "type": "powerup",
+      "subType": "invinc"
+    },
+    {
+      "x": 880,
+      "y": 235,
+      "type": "powerup",
+      "subType": "lowgrav"
+    },
+    {
+      "x": 650,
+      "y": 215,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1100,
+      "y": 215,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1560,
+      "y": 249,
+      "type": "exit",
+      "open": true
+    }
+  ],
+  "enemies": [
+    {
+      "x": 70,
+      "y": 258,
+      "type": "crawler",
+      "patrolRange": 50
+    },
+    {
+      "x": 360,
+      "y": 253,
+      "type": "mine",
+      "patrolRange": 40,
+      "chaseSpeed": 1.5
+    },
+    {
+      "x": 680,
+      "y": 243,
+      "type": "drone",
+      "chaseRange": 90
+    },
+    {
+      "x": 910,
+      "y": 243,
+      "type": "jumper",
+      "patrolRange": 40
+    },
+    {
+      "x": 1110,
+      "y": 243,
+      "type": "mine",
+      "patrolRange": 40,
+      "chaseSpeed": 1.7
+    },
+    {
+      "x": 1320,
+      "y": 248,
+      "type": "crawler",
+      "patrolRange": 45
+    }
+  ]
+}

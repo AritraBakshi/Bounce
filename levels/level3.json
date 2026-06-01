@@ -1,0 +1,311 @@
+{
+  "id": 3,
+  "name": "IRON WORKS",
+  "theme": 2,
+  "bgMusic": 2,
+  "worldW": 1540,
+  "worldH": 460,
+  "spawn": {
+    "x": 30,
+    "y": 220
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 285,
+      "w": 180,
+      "h": 16,
+      "type": "static",
+      "theme": 2
+    },
+    {
+      "x": 220,
+      "y": 265,
+      "w": 80,
+      "h": 12,
+      "type": "static",
+      "theme": 2
+    },
+    {
+      "x": 340,
+      "y": 250,
+      "w": 70,
+      "h": 12,
+      "type": "moving",
+      "axis": "y",
+      "moveRange": 35,
+      "speed": 1.1,
+      "theme": 2
+    },
+    {
+      "x": 450,
+      "y": 265,
+      "w": 90,
+      "h": 12,
+      "type": "static",
+      "theme": 2
+    },
+    {
+      "x": 580,
+      "y": 250,
+      "w": 60,
+      "h": 12,
+      "type": "crumble",
+      "theme": 2
+    },
+    {
+      "x": 670,
+      "y": 265,
+      "w": 100,
+      "h": 12,
+      "type": "static",
+      "theme": 2
+    },
+    {
+      "x": 790,
+      "y": 235,
+      "w": 60,
+      "h": 10,
+      "type": "oneWay",
+      "theme": 2
+    },
+    {
+      "x": 880,
+      "y": 265,
+      "w": 90,
+      "h": 12,
+      "type": "static",
+      "theme": 2
+    },
+    {
+      "x": 1000,
+      "y": 250,
+      "w": 60,
+      "h": 12,
+      "type": "moving",
+      "axis": "x",
+      "moveRange": 40,
+      "speed": 1.2,
+      "theme": 2
+    },
+    {
+      "x": 1090,
+      "y": 265,
+      "w": 80,
+      "h": 12,
+      "type": "static",
+      "theme": 2
+    },
+    {
+      "x": 1200,
+      "y": 255,
+      "w": 320,
+      "h": 14,
+      "type": "static",
+      "theme": 2
+    },
+    {
+      "x": 0,
+      "y": 430,
+      "w": 1540,
+      "h": 30,
+      "type": "static",
+      "theme": 2
+    }
+  ],
+  "hazards": [
+    {
+      "x": 200,
+      "y": 273,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 760,
+      "y": 253,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 485,
+      "y": 235,
+      "w": 20,
+      "h": 18,
+      "type": "electric"
+    },
+    {
+      "x": 1020,
+      "y": 230,
+      "w": 20,
+      "h": 18,
+      "type": "electric"
+    },
+    {
+      "x": 450,
+      "y": 340,
+      "w": 30,
+      "h": 28,
+      "type": "crusher",
+      "crushRange": 70,
+      "crushSpeed": 1.4
+    },
+    {
+      "x": 180,
+      "y": 390,
+      "w": 900,
+      "h": 40,
+      "type": "lava"
+    }
+  ],
+  "collectibles": [
+    {
+      "x": 260,
+      "y": 248,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 375,
+      "y": 230,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 520,
+      "y": 248,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 535,
+      "y": 232,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 600,
+      "y": 232,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 720,
+      "y": 248,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 818,
+      "y": 215,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 930,
+      "y": 248,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 960,
+      "y": 232,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 1110,
+      "y": 248,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 1250,
+      "y": 238,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 1340,
+      "y": 238,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 700,
+      "y": 248,
+      "type": "coin"
+    },
+    {
+      "x": 1300,
+      "y": 238,
+      "type": "coin"
+    },
+    {
+      "x": 1380,
+      "y": 238,
+      "type": "coin"
+    },
+    {
+      "x": 465,
+      "y": 245,
+      "type": "powerup",
+      "subType": "shield"
+    },
+    {
+      "x": 900,
+      "y": 245,
+      "type": "powerup",
+      "subType": "speed"
+    },
+    {
+      "x": 570,
+      "y": 225,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1100,
+      "y": 225,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1480,
+      "y": 239,
+      "type": "exit",
+      "open": true
+    }
+  ],
+  "enemies": [
+    {
+      "x": 270,
+      "y": 273,
+      "type": "mine",
+      "patrolRange": 40
+    },
+    {
+      "x": 500,
+      "y": 253,
+      "type": "crawler",
+      "patrolRange": 45
+    },
+    {
+      "x": 720,
+      "y": 253,
+      "type": "mine",
+      "patrolRange": 45
+    },
+    {
+      "x": 920,
+      "y": 253,
+      "type": "drone",
+      "chaseRange": 80
+    },
+    {
+      "x": 1140,
+      "y": 253,
+      "type": "crawler",
+      "patrolRange": 40
+    }
+  ]
+}

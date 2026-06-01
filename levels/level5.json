@@ -1,0 +1,362 @@
+{
+  "id": 5,
+  "name": "SKY KINGDOM",
+  "theme": 4,
+  "bgMusic": 4,
+  "worldW": 1820,
+  "worldH": 460,
+  "spawn": {
+    "x": 30,
+    "y": 200
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 250,
+      "w": 140,
+      "h": 12,
+      "type": "static",
+      "theme": 4
+    },
+    {
+      "x": 180,
+      "y": 235,
+      "w": 60,
+      "h": 10,
+      "type": "moving",
+      "axis": "y",
+      "moveRange": 40,
+      "speed": 1.1,
+      "theme": 4
+    },
+    {
+      "x": 280,
+      "y": 245,
+      "w": 70,
+      "h": 10,
+      "type": "static",
+      "theme": 4
+    },
+    {
+      "x": 390,
+      "y": 230,
+      "w": 60,
+      "h": 10,
+      "type": "crumble",
+      "theme": 4
+    },
+    {
+      "x": 490,
+      "y": 245,
+      "w": 70,
+      "h": 10,
+      "type": "static",
+      "theme": 4
+    },
+    {
+      "x": 600,
+      "y": 228,
+      "w": 60,
+      "h": 10,
+      "type": "moving",
+      "axis": "x",
+      "moveRange": 45,
+      "speed": 1.3,
+      "theme": 4
+    },
+    {
+      "x": 700,
+      "y": 245,
+      "w": 80,
+      "h": 10,
+      "type": "static",
+      "theme": 4
+    },
+    {
+      "x": 800,
+      "y": 215,
+      "w": 60,
+      "h": 10,
+      "type": "oneWay",
+      "theme": 4
+    },
+    {
+      "x": 890,
+      "y": 245,
+      "w": 80,
+      "h": 10,
+      "type": "static",
+      "theme": 4
+    },
+    {
+      "x": 1010,
+      "y": 232,
+      "w": 60,
+      "h": 10,
+      "type": "moving",
+      "axis": "y",
+      "moveRange": 45,
+      "speed": 1.4,
+      "theme": 4
+    },
+    {
+      "x": 1110,
+      "y": 245,
+      "w": 80,
+      "h": 10,
+      "type": "static",
+      "theme": 4
+    },
+    {
+      "x": 1230,
+      "y": 230,
+      "w": 60,
+      "h": 10,
+      "type": "crumble",
+      "theme": 4
+    },
+    {
+      "x": 1330,
+      "y": 245,
+      "w": 80,
+      "h": 10,
+      "type": "static",
+      "theme": 4
+    },
+    {
+      "x": 1450,
+      "y": 232,
+      "w": 60,
+      "h": 10,
+      "type": "moving",
+      "axis": "x",
+      "moveRange": 40,
+      "speed": 1.5,
+      "theme": 4
+    },
+    {
+      "x": 1560,
+      "y": 245,
+      "w": 240,
+      "h": 12,
+      "type": "static",
+      "theme": 4
+    }
+  ],
+  "hazards": [
+    {
+      "x": 160,
+      "y": 238,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 668,
+      "y": 233,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 1088,
+      "y": 233,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 340,
+      "y": 215,
+      "w": 20,
+      "h": 18,
+      "type": "electric"
+    },
+    {
+      "x": 870,
+      "y": 215,
+      "w": 20,
+      "h": 18,
+      "type": "electric"
+    }
+  ],
+  "collectibles": [
+    {
+      "x": 70,
+      "y": 232,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 207,
+      "y": 213,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 305,
+      "y": 227,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 420,
+      "y": 210,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 530,
+      "y": 226,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 625,
+      "y": 208,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 740,
+      "y": 226,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 828,
+      "y": 195,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 944,
+      "y": 226,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 1040,
+      "y": 212,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 1150,
+      "y": 226,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 1260,
+      "y": 210,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 1370,
+      "y": 226,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 1600,
+      "y": 226,
+      "type": "coin"
+    },
+    {
+      "x": 1650,
+      "y": 226,
+      "type": "coin"
+    },
+    {
+      "x": 1700,
+      "y": 226,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 1750,
+      "y": 226,
+      "type": "coin"
+    },
+    {
+      "x": 450,
+      "y": 225,
+      "type": "powerup",
+      "subType": "dblj"
+    },
+    {
+      "x": 950,
+      "y": 225,
+      "type": "powerup",
+      "subType": "invinc"
+    },
+    {
+      "x": 1300,
+      "y": 225,
+      "type": "powerup",
+      "subType": "speed"
+    },
+    {
+      "x": 610,
+      "y": 205,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1180,
+      "y": 205,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1760,
+      "y": 229,
+      "type": "exit",
+      "open": true
+    }
+  ],
+  "enemies": [
+    {
+      "x": 100,
+      "y": 210,
+      "type": "drone",
+      "chaseRange": 80,
+      "floatAmp": 14
+    },
+    {
+      "x": 340,
+      "y": 195,
+      "type": "drone",
+      "chaseRange": 85,
+      "floatAmp": 18
+    },
+    {
+      "x": 560,
+      "y": 200,
+      "type": "drone",
+      "chaseRange": 85,
+      "floatAmp": 16
+    },
+    {
+      "x": 780,
+      "y": 188,
+      "type": "drone",
+      "chaseRange": 90,
+      "floatAmp": 20
+    },
+    {
+      "x": 1000,
+      "y": 195,
+      "type": "drone",
+      "chaseRange": 90,
+      "floatAmp": 15
+    },
+    {
+      "x": 1280,
+      "y": 200,
+      "type": "drone",
+      "chaseRange": 95,
+      "floatAmp": 18
+    }
+  ]
+}

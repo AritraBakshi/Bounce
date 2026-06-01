@@ -1,0 +1,278 @@
+{
+  "id": 2,
+  "name": "DARK CAVE",
+  "theme": 1,
+  "bgMusic": 1,
+  "worldW": 1440,
+  "worldH": 430,
+  "spawn": {
+    "x": 30,
+    "y": 220
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 270,
+      "w": 180,
+      "h": 16,
+      "type": "static",
+      "theme": 1
+    },
+    {
+      "x": 220,
+      "y": 255,
+      "w": 80,
+      "h": 12,
+      "type": "static",
+      "theme": 1
+    },
+    {
+      "x": 340,
+      "y": 240,
+      "w": 70,
+      "h": 12,
+      "type": "crumble",
+      "theme": 1
+    },
+    {
+      "x": 450,
+      "y": 255,
+      "w": 90,
+      "h": 12,
+      "type": "static",
+      "theme": 1
+    },
+    {
+      "x": 580,
+      "y": 245,
+      "w": 60,
+      "h": 12,
+      "type": "moving",
+      "axis": "y",
+      "moveRange": 40,
+      "speed": 1.0,
+      "theme": 1
+    },
+    {
+      "x": 670,
+      "y": 260,
+      "w": 100,
+      "h": 12,
+      "type": "static",
+      "theme": 1
+    },
+    {
+      "x": 800,
+      "y": 240,
+      "w": 60,
+      "h": 10,
+      "type": "oneWay",
+      "theme": 1
+    },
+    {
+      "x": 890,
+      "y": 255,
+      "w": 90,
+      "h": 12,
+      "type": "static",
+      "theme": 1
+    },
+    {
+      "x": 1010,
+      "y": 245,
+      "w": 60,
+      "h": 12,
+      "type": "moving",
+      "axis": "x",
+      "moveRange": 45,
+      "speed": 1.1,
+      "theme": 1
+    },
+    {
+      "x": 1100,
+      "y": 260,
+      "w": 80,
+      "h": 12,
+      "type": "static",
+      "theme": 1
+    },
+    {
+      "x": 1210,
+      "y": 250,
+      "w": 210,
+      "h": 12,
+      "type": "static",
+      "theme": 1
+    },
+    {
+      "x": 0,
+      "y": 400,
+      "w": 1440,
+      "h": 30,
+      "type": "static",
+      "theme": 1
+    }
+  ],
+  "hazards": [
+    {
+      "x": 200,
+      "y": 258,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 770,
+      "y": 248,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 630,
+      "y": 235,
+      "w": 20,
+      "h": 18,
+      "type": "electric"
+    },
+    {
+      "x": 320,
+      "y": 370,
+      "w": 380,
+      "h": 30,
+      "type": "lava"
+    }
+  ],
+  "collectibles": [
+    {
+      "x": 260,
+      "y": 238,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 380,
+      "y": 222,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 490,
+      "y": 238,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 608,
+      "y": 224,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 710,
+      "y": 243,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 720,
+      "y": 243,
+      "type": "coin"
+    },
+    {
+      "x": 740,
+      "y": 243,
+      "type": "coin"
+    },
+    {
+      "x": 840,
+      "y": 218,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 940,
+      "y": 238,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 1050,
+      "y": 228,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 1160,
+      "y": 243,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 1280,
+      "y": 233,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 475,
+      "y": 235,
+      "type": "powerup",
+      "subType": "dblj"
+    },
+    {
+      "x": 920,
+      "y": 235,
+      "type": "powerup",
+      "subType": "magnet"
+    },
+    {
+      "x": 480,
+      "y": 218,
+      "type": "checkpoint"
+    },
+    {
+      "x": 920,
+      "y": 218,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1380,
+      "y": 234,
+      "type": "exit",
+      "open": true
+    }
+  ],
+  "enemies": [
+    {
+      "x": 270,
+      "y": 258,
+      "type": "mine",
+      "patrolRange": 40
+    },
+    {
+      "x": 490,
+      "y": 243,
+      "type": "crawler",
+      "patrolRange": 40
+    },
+    {
+      "x": 720,
+      "y": 248,
+      "type": "drone",
+      "chaseRange": 75
+    },
+    {
+      "x": 940,
+      "y": 243,
+      "type": "jumper",
+      "patrolRange": 40
+    },
+    {
+      "x": 1150,
+      "y": 248,
+      "type": "crawler",
+      "patrolRange": 45
+    }
+  ]
+}

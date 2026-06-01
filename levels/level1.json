@@ -1,0 +1,232 @@
+{
+  "id": 1,
+  "name": "GREEN HILLS",
+  "theme": 0,
+  "bgMusic": 0,
+  "worldW": 1280,
+  "worldH": 380,
+  "spawn": {
+    "x": 30,
+    "y": 220
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 270,
+      "w": 220,
+      "h": 16,
+      "type": "static"
+    },
+    {
+      "x": 260,
+      "y": 255,
+      "w": 100,
+      "h": 12,
+      "type": "static"
+    },
+    {
+      "x": 400,
+      "y": 240,
+      "w": 80,
+      "h": 12,
+      "type": "static"
+    },
+    {
+      "x": 510,
+      "y": 235,
+      "w": 70,
+      "h": 12,
+      "type": "moving",
+      "axis": "y",
+      "moveRange": 25,
+      "speed": 0.8
+    },
+    {
+      "x": 620,
+      "y": 250,
+      "w": 110,
+      "h": 12,
+      "type": "static"
+    },
+    {
+      "x": 750,
+      "y": 225,
+      "w": 60,
+      "h": 10,
+      "type": "oneWay"
+    },
+    {
+      "x": 840,
+      "y": 255,
+      "w": 90,
+      "h": 12,
+      "type": "static"
+    },
+    {
+      "x": 960,
+      "y": 245,
+      "w": 70,
+      "h": 12,
+      "type": "moving",
+      "axis": "x",
+      "moveRange": 35,
+      "speed": 0.8
+    },
+    {
+      "x": 1060,
+      "y": 255,
+      "w": 200,
+      "h": 12,
+      "type": "static"
+    },
+    {
+      "x": 1050,
+      "y": 225,
+      "w": 60,
+      "h": 10,
+      "type": "crumble"
+    },
+    {
+      "x": 0,
+      "y": 360,
+      "w": 1280,
+      "h": 20,
+      "type": "static"
+    }
+  ],
+  "hazards": [
+    {
+      "x": 340,
+      "y": 243,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    },
+    {
+      "x": 740,
+      "y": 243,
+      "w": 16,
+      "h": 12,
+      "type": "spike"
+    }
+  ],
+  "collectibles": [
+    {
+      "x": 295,
+      "y": 238,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 438,
+      "y": 223,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 544,
+      "y": 215,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 660,
+      "y": 233,
+      "type": "gem",
+      "color": "red"
+    },
+    {
+      "x": 700,
+      "y": 233,
+      "type": "coin"
+    },
+    {
+      "x": 778,
+      "y": 205,
+      "type": "gem",
+      "color": "purple"
+    },
+    {
+      "x": 878,
+      "y": 238,
+      "type": "gem",
+      "color": "blue"
+    },
+    {
+      "x": 993,
+      "y": 225,
+      "type": "gem",
+      "color": "green"
+    },
+    {
+      "x": 1090,
+      "y": 238,
+      "type": "coin"
+    },
+    {
+      "x": 1140,
+      "y": 238,
+      "type": "coin"
+    },
+    {
+      "x": 1190,
+      "y": 238,
+      "type": "gem",
+      "color": "yellow"
+    },
+    {
+      "x": 430,
+      "y": 220,
+      "type": "powerup",
+      "subType": "speed"
+    },
+    {
+      "x": 870,
+      "y": 235,
+      "type": "powerup",
+      "subType": "shield"
+    },
+    {
+      "x": 500,
+      "y": 218,
+      "type": "checkpoint"
+    },
+    {
+      "x": 870,
+      "y": 218,
+      "type": "checkpoint"
+    },
+    {
+      "x": 1220,
+      "y": 239,
+      "type": "exit",
+      "open": true
+    }
+  ],
+  "enemies": [
+    {
+      "x": 310,
+      "y": 243,
+      "type": "mine",
+      "patrolRange": 35
+    },
+    {
+      "x": 670,
+      "y": 238,
+      "type": "crawler",
+      "patrolRange": 40
+    },
+    {
+      "x": 890,
+      "y": 243,
+      "type": "mine",
+      "patrolRange": 35
+    },
+    {
+      "x": 1110,
+      "y": 243,
+      "type": "crawler",
+      "patrolRange": 50
+    }
+  ]
+}

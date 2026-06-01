@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <title>BOUNCE — Nokia-Inspired Platformer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div id="game-wrapper">
+    <canvas id="gameCanvas"></canvas>
+    <div id="mobile-controls">
+      <div id="mobile-left">
+        <button class="ctrl-btn" id="btn-left" aria-label="Move Left">&#9664;</button>
+        <button class="ctrl-btn" id="btn-right" aria-label="Move Right">&#9654;</button>
+      </div>
+      <div id="mobile-right">
+        <button class="ctrl-btn" id="btn-jump" aria-label="Jump">&#9650;</button>
+      </div>
+    </div>
+    <div id="loading-screen">
+      <div class="loading-content">
+        <div class="loading-ball"></div>
+        <h1 class="loading-title">BOUNCE</h1>
+        <p class="loading-sub">Loading world...</p>
+        <div class="loading-bar-wrap"><div class="loading-bar" id="loading-bar"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Utils & Core -->
+  <script src="js/utils/constants.js" defer></script>
+  <script src="js/utils/math.js" defer></script>
+  <script src="js/utils/helpers.js" defer></script>
+  <script src="js/engine/EventBus.js" defer></script>
+
+  <!-- Engine Systems -->
+  <script src="js/engine/input.js" defer></script>
+  <script src="js/engine/audio.js" defer></script>
+  <script src="js/engine/particles.js" defer></script>
+  <script src="js/engine/collision.js" defer></script>
+  <script src="js/engine/camera.js" defer></script>
+  <script src="js/engine/physics.js" defer></script>
+
+  <!-- Game Entities -->
+  <script src="js/entities/platform.js" defer></script>
+  <script src="js/entities/hazard.js" defer></script>
+  <script src="js/entities/collectible.js" defer></script>
+  <script src="js/entities/enemy.js" defer></script>
+  <script src="js/entities/player.js" defer></script>
+
+  <!-- Renderer, UI, & Level Loader -->
+  <script src="js/engine/renderer.js" defer></script>
+  <script src="js/ui/hud.js" defer></script>
+  <script src="js/ui/menus.js" defer></script>
+  <script src="js/levels/levelLoader.js" defer></script>
+
+  <!-- Game Bootstrapper -->
+  <script src="js/game.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

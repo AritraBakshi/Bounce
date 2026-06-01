@@ -1,0 +1,281 @@
+/* ============================================================
+   BOUNCE — Main Stylesheet (with font consistency/scale fixes)
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:       #e8231a;
+  --red-light: #ff5a50;
+  --red-dark:  #a3100a;
+  --gold:      #ffd700;
+  --bg:        #0a0a12;
+  --panel:     rgba(10,10,20,0.88);
+  --glow-r:    rgba(232,35,26,0.6);
+  --font-main: 'Courier New', Courier, monospace;
+  --font-base: clamp(18px, 2.2vw, 36px);
+  --font-title: clamp(32px, 6vw, 60px);
+  --font-section: clamp(25px, 4vw, 45px);
+  --font-bigicon: clamp(85px, 10vw, 160px);
+  --canvas-shadow: 0 0 80px rgba(255,80,60,0.15),
+                   0 0 180px rgba(255,80,60,0.08),
+                   inset 0 0 30px rgba(255,255,255,0.04);
+}
+
+html, body {
+  width: 100%; height: 100%;
+  margin: 0; padding: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #141428 0%, #080810 55%, #020204 100%);
+  font-family: var(--font-main);
+  font-size: var(--font-base);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#game-wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+#gameCanvas {
+  display: block;
+  cursor: default;
+  image-rendering: auto;
+  filter:
+    contrast(1.04)
+    saturate(1.08)
+    brightness(1.02)
+    drop-shadow(0 0 18px rgba(255,80,60,0.22));
+  will-change: transform;
+  transform: translateZ(0);
+  border-radius: 18px;
+  box-shadow: var(--canvas-shadow);
+}
+
+#game-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center,
+      rgba(255,255,255,0.02) 0%,
+      rgba(0,0,0,0.18) 100%);
+  z-index: 2;
+}
+
+/* ── Loading Screen ── */
+#loading-screen {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 0.6s ease;
+}
+#loading-screen.hidden { opacity: 0; pointer-events: none; }
+
+.loading-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem !important;
+}
+.loading-ball {
+  width: clamp(60px, 8vw, 140px);
+  height: clamp(60px, 8vw, 140px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff7a6e, #e8231a 55%, #6b0d08);
+  box-shadow: 0 0 30px var(--glow-r), 0 0 60px rgba(232,35,26,0.3);
+  animation: loadBounce 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes loadBounce {
+  from { transform: translateY(0) scaleY(1) scaleX(1); }
+  to   { transform: translateY(-28px) scaleY(1.08) scaleX(0.94); }
+}
+
+.loading-title {
+  font-size: var(--font-title) !important;
+  font-weight: 900 !important;
+  color: #fff;
+  text-shadow:
+    0 0 20px var(--glow-r), 0 0 50px var(--glow-r);
+  letter-spacing: 0.30em !important;
+}
+
+.loading-sub {
+  color: rgba(255,255,255,0.8);
+  font-size: clamp(1rem, 2vw, 2rem) !important;
+  opacity: 0.9;
+  letter-spacing: 0.13em;
+}
+
+.loading-bar-wrap {
+  width: min(50vw, 420px) !important;
+  height: 10px !important;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--red), var(--red-light));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--glow-r);
+}
+
+/* ── Mobile Controls ── */
+#mobile-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 0; right: 0;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 20px;
+  pointer-events: none;
+  z-index: 50;
+}
+
+#mobile-left, #mobile-right {
+  display: flex;
+  gap: 10px;
+  pointer-events: all;
+}
+
+.ctrl-btn {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  background: rgba(10,10,20,0.7);
+  color: rgba(255,255,255,0.8);
+  font-size: 1.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+.ctrl-btn:active, .ctrl-btn.pressed {
+  background: rgba(232,35,26,0.4);
+  border-color: var(--red-light);
+  transform: scale(0.93);
+}
+
+#btn-jump {
+  width: 70px; height: 70px;
+  font-size: 2.0rem;
+  background: rgba(232,35,26,0.25);
+  border-color: var(--red);
+}
+#btn-jump:active, #btn-jump.pressed {
+  background: rgba(232,35,26,0.55);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #mobile-controls { display: flex; }
+}
+
+canvas { outline: none; }
+
+/* ======= UI/Font Normalization New Styles ======= */
+
+button, .ctrl-btn, .menu-btn, .ui-text, .score-text {
+  font-size: var(--font-base) !important;
+}
+
+.menu-title, .ui-title {
+  font-size: var(--font-title);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.menu-section {
+  font-size: var(--font-section);
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.menu-label {
+  font-size: calc(var(--font-base) * 1.05);
+  font-weight: 600;
+}
+
+.menu-desc, .menu-sub {
+  font-size: calc(var(--font-base) * 0.95);
+  color: #ffd700;
+}
+.text-wrap {
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Guide/Achievement icon scaling */
+.big-icon, .big-guide-icon {
+  width: var(--font-bigicon);
+  height: var(--font-bigicon);
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.2em 0 auto 0.8em;
+}
+
+/* Responsive/Consistent scaling for all menus/pages */
+.menu-content, .achievements-content, .guide-content {
+  font-size: var(--font-base);
+  letter-spacing: normal;
+  line-height: 1.27;
+  gap: 1.6em;
+}
+.menu-row {
+  margin: 0.9em 0;
+  min-height: 2em;
+}
+.menu-options {
+  margin-bottom: 1em;
+}
+
+/* General text wrapping for overflow-prone blocks */
+.wrap-block, .guide-section {
+  display: block;
+  width: 100%;
+  max-width: 98vw;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Reduce empty look */
+#game-wrapper {
+  padding: 0 !important;
+}
+
+canvas {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+body {
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
