@@ -17,7 +17,7 @@ class InputManager {
     /** Public per-frame state (set in flush()) */
     this.state = this._blankState();
 
-    /** Mobile button state — now includes up/down for menu nav */
+    /** Mobile button state — now includes up/down for menu nav, right for movement */
     this._mobile = { left: false, right: false, jump: false, up: false, down: false };
 
     /** Gamepad axes snapshot */
