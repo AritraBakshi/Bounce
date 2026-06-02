@@ -17,8 +17,8 @@ class InputManager {
     /** Public per-frame state (set in flush()) */
     this.state = this._blankState();
 
-    /** Mobile button state */
-    this._mobile = { left: false, right: false, jump: false };
+    /** Mobile button state — now includes up/down for menu nav */
+    this._mobile = { left: false, right: false, jump: false, up: false, down: false };
 
     /** Gamepad axes snapshot */
     this._gp = null;
@@ -31,8 +31,12 @@ class InputManager {
   /* ── Internal ─────────────────────────────────────────── */
 
   _blankState() {
-    return { left: false, right: false, jump: false, pause: false,
-             jumpJustPressed: false, anyJustPressed: false };
+    return { 
+      left: false, right: false, jump: false, pause: false,
+      jumpJustPressed: false, 
+      menuUp: false, menuDown: false,
+      spaceOnly: false, anyJustPressed: false 
+    };
   }
 
   _bindKeyboard() {
@@ -54,6 +58,8 @@ class InputManager {
       'btn-left':  'left',
       'btn-right': 'right',
       'btn-jump':  'jump',
+      'btn-up':    'up',
+      'btn-down':  'down',
     };
     for (const [id, action] of Object.entries(map)) {
       const el = document.getElementById(id);
@@ -63,7 +69,10 @@ class InputManager {
         e.preventDefault();
         this._mobile[action] = true;
         el.classList.add('pressed');
+        // Track just-pressed for menu navigation and jump
         if (action === 'jump') this._justPressed['MobileJump'] = true;
+        if (action === 'up')   this._justPressed['MobileUp'] = true;
+        if (action === 'down') this._justPressed['MobileDown'] = true;
       };
       const end = (e) => {
         e.preventDefault();
@@ -92,6 +101,10 @@ class InputManager {
     const axisX = gp.axes[0] || 0;
     if (axisX < -0.3) this._keys['ArrowLeft']  = true;
     if (axisX >  0.3) this._keys['ArrowRight'] = true;
+    // Axis 1: left stick Y (for menu navigation)
+    const axisY = gp.axes[1] || 0;
+    if (axisY < -0.3) this._keys['GamepadUp'] = true;
+    if (axisY >  0.3) this._keys['GamepadDown'] = true;
     // Button 0: A / Cross = jump
     if (gp.buttons[0]?.pressed) {
       if (!this._keys['GamepadJump']) this._justPressed['GamepadJump'] = true;
@@ -117,6 +130,22 @@ class InputManager {
     const jump  = !!(this._keys['ArrowUp']    || this._keys['KeyW'] || this._keys['Space'] || this._mobile.jump || this._keys['GamepadJump']);
     const pause = !!(this._justPressed['Escape'] || this._justPressed['KeyP']);
 
+    // Menu navigation: separate from jump
+    // Uses ArrowUp/W from keyboard, MobileUp from button, GamepadUp from gamepad
+    const menuUp = !!(
+      this._justPressed['ArrowUp'] ||
+      this._justPressed['KeyW'] ||
+      this._justPressed['MobileUp'] ||
+      this._justPressed['GamepadUp']
+    );
+
+    const menuDown = !!(
+      this._justPressed['ArrowDown'] ||
+      this._justPressed['KeyS'] ||
+      this._justPressed['MobileDown'] ||
+      this._justPressed['GamepadDown']
+    );
+
     const jumpJustPressed = !!(
       this._justPressed['ArrowUp']   ||
       this._justPressed['KeyW']      ||
@@ -135,7 +164,11 @@ class InputManager {
 
     const anyJustPressed = Object.keys(this._justPressed).length > 0;
 
-    this.state = { left, right, jump, pause, jumpJustPressed, spaceOnly, anyJustPressed };
+    this.state = { 
+      left, right, jump, pause, 
+      jumpJustPressed, menuUp, menuDown,
+      spaceOnly, anyJustPressed 
+    };
 
     // Clear per-frame maps
     this._justPressed  = {};
