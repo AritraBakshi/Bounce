@@ -14,32 +14,32 @@
     <canvas id="gameCanvas"></canvas>
     
     <div id="mobile-controls">
-      <!-- Bottom Left: Left button (gameplay/pause) or Up button (menu) -->
+      <!-- Bottom Left: Left (gameplay/pause) or Up (menu) -->
       <div id="mobile-left">
         <button class="ctrl-btn" id="btn-left" aria-label="Move Left">◄</button>
         <button class="ctrl-btn" id="btn-up" aria-label="Menu Up">▲</button>
       </div>
 
-      <!-- Bottom Center: Jump button -->
+      <!-- Bottom Center: Jump -->
       <div id="mobile-center">
         <button class="ctrl-btn ctrl-btn-large" id="btn-jump" aria-label="Jump / Select">●</button>
       </div>
 
-      <!-- Bottom Right: Right button (gameplay/pause) or Down button (menu) -->
+      <!-- Bottom Right: Right (gameplay/pause) or Down (menu) -->
       <div id="mobile-right">
         <button class="ctrl-btn" id="btn-right" aria-label="Move Right">►</button>
         <button class="ctrl-btn" id="btn-down" aria-label="Menu Down">▼</button>
       </div>
 
-      <!-- Top Left: Mute button (gameplay/pause only) -->
+      <!-- Pause Mode Side Buttons (beside left and right) -->
+      <button class="ctrl-btn ctrl-btn-pause" id="btn-pause-up" aria-label="Menu Up">▲</button>
+      <button class="ctrl-btn ctrl-btn-pause" id="btn-pause-down" aria-label="Menu Down">▼</button>
+
+      <!-- Top Left: Mute (gameplay/pause only) -->
       <button class="ctrl-btn ctrl-btn-small" id="btn-mute" aria-label="Mute / Unmute">♪</button>
 
-      <!-- Top Right: Escape button (all game states) -->
+      <!-- Top Right: Escape (all states) -->
       <button class="ctrl-btn ctrl-btn-small" id="btn-escape" aria-label="Pause / Resume / Back">⏸</button>
-
-      <!-- Pause Mode Extra Buttons: Up and Down beside Left and Right (side by side) -->
-      <button class="ctrl-btn ctrl-btn-pause" id="btn-pause-up" aria-label="Menu Up (Pause)">▲</button>
-      <button class="ctrl-btn ctrl-btn-pause" id="btn-pause-down" aria-label="Menu Down (Pause)">▼</button>
     </div>
 
     <div id="loading-screen">
