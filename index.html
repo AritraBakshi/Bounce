@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <title>BOUNCE — Nokia-Inspired Platformer</title>
   <link rel="stylesheet" href="css/style.css">
@@ -15,8 +16,8 @@
     <div id="mobile-controls">
       <!-- Left button group -->
       <div id="mobile-left">
-        <button class="ctrl-btn" id="btn-left" aria-label="Move Left" data-mode="gameplay">◄</button>
-        <button class="ctrl-btn" id="btn-up" aria-label="Menu Up" data-mode="menu">▲</button>
+        <button class="ctrl-btn" id="btn-left" aria-label="Move Left">◄</button>
+        <button class="ctrl-btn" id="btn-up" aria-label="Menu Up">▲</button>
       </div>
 
       <!-- Center button -->
@@ -26,13 +27,13 @@
 
       <!-- Right button group -->
       <div id="mobile-right">
-        <button class="ctrl-btn" id="btn-right" aria-label="Move Right" data-mode="gameplay">►</button>
-        <button class="ctrl-btn" id="btn-down" aria-label="Menu Down" data-mode="menu">▼</button>
+        <button class="ctrl-btn" id="btn-right" aria-label="Move Right">►</button>
+        <button class="ctrl-btn" id="btn-down" aria-label="Menu Down">▼</button>
       </div>
 
       <!-- Top controls: Mute (left) and Escape (right) -->
-      <button class="ctrl-btn ctrl-btn-small" id="btn-mute" aria-label="Mute / Unmute" data-mode="gameplay">♪</button>
-      <button class="ctrl-btn ctrl-btn-small" id="btn-escape" aria-label="Pause / Resume" data-mode="gameplay">⏸</button>
+      <button class="ctrl-btn ctrl-btn-small" id="btn-mute" aria-label="Mute / Unmute">♪</button>
+      <button class="ctrl-btn ctrl-btn-small" id="btn-escape" aria-label="Pause / Resume">⏸</button>
     </div>
 
     <div id="loading-screen">
@@ -72,9 +73,11 @@
   <script src="js/ui/menus.js" defer></script>
   <script src="js/levels/levelLoader.js" defer></script>
 
+  <!-- Mobile Controls MUST load before game.js -->
+  <script src="js/ui/mobile-controls.js" defer></script>
+
   <!-- Game Bootstrapper -->
   <script src="js/game.js" defer></script>
-  <script src="js/ui/mobile-controls.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
