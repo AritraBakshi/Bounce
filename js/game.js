@@ -128,6 +128,9 @@ class Game {
 
   /* ── Update ── */
   _update(dt) {
+    // Update InputManager with current menu state
+    this.input.menuOpen = this.menus.isOpen;
+    
     this.input.flush();
     const inp = this.input.state;
 
