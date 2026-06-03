@@ -203,6 +203,7 @@ html, body {
   left: 82px;
   display: none !important;
   pointer-events: all !important;
+  z-index: 51;
 }
 
 #btn-pause-down {
@@ -211,6 +212,7 @@ html, body {
   right: 82px;
   display: none !important;
   pointer-events: all !important;
+  z-index: 51;
 }
 
 /* Top Left: Mute button (gameplay/pause only) */
@@ -220,6 +222,7 @@ html, body {
   left: 16px;
   display: none !important;
   pointer-events: all !important;
+  z-index: 51;
 }
 
 /* Top Right: Escape button (all game states) */
@@ -229,6 +232,7 @@ html, body {
   right: 16px;
   display: none !important;
   pointer-events: all !important;
+  z-index: 51;
 }
 
 /* Base button styles */
@@ -305,62 +309,62 @@ html, body {
 }
 
 #btn-mute {
-  background: rgba(255,215,0,0.2);
-  border-color: rgba(255,215,0,0.4);
-  color: rgba(255,215,0,0.9);
+  background: rgba(255,215,0,0.2) !important;
+  border-color: rgba(255,215,0,0.4) !important;
+  color: rgba(255,215,0,0.9) !important;
 }
 
 #btn-mute:hover {
   opacity: 1;
-  background: rgba(255,215,0,0.3);
-  border-color: rgba(255,215,0,0.5);
+  background: rgba(255,215,0,0.3) !important;
+  border-color: rgba(255,215,0,0.5) !important;
 }
 
 #btn-mute:active,
 #btn-mute.pressed {
-  background: rgba(255,215,0,0.5);
-  border-color: rgba(255,215,0,0.7);
-  box-shadow: 0 4px 12px rgba(255,215,0,0.2), inset 0 1px 2px rgba(255,255,255,0.15), 0 0 16px rgba(255,215,0,0.3);
+  background: rgba(255,215,0,0.5) !important;
+  border-color: rgba(255,215,0,0.7) !important;
+  box-shadow: 0 4px 12px rgba(255,215,0,0.2), inset 0 1px 2px rgba(255,255,255,0.15), 0 0 16px rgba(255,215,0,0.3) !important;
 }
 
 #btn-escape {
-  background: rgba(232,35,26,0.25);
-  border-color: rgba(232,35,26,0.5);
+  background: rgba(232,35,26,0.25) !important;
+  border-color: rgba(232,35,26,0.5) !important;
 }
 
 #btn-escape:hover {
   opacity: 1;
-  background: rgba(232,35,26,0.35);
-  border-color: rgba(232,35,26,0.6);
+  background: rgba(232,35,26,0.35) !important;
+  border-color: rgba(232,35,26,0.6) !important;
 }
 
 #btn-escape:active,
 #btn-escape.pressed {
-  background: rgba(232,35,26,0.5);
-  border-color: rgba(232,35,26,0.7);
-  box-shadow: 0 4px 12px rgba(232,35,26,0.3), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 16px rgba(232,35,26,0.25);
+  background: rgba(232,35,26,0.5) !important;
+  border-color: rgba(232,35,26,0.7) !important;
+  box-shadow: 0 4px 12px rgba(232,35,26,0.3), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 16px rgba(232,35,26,0.25) !important;
 }
 
 #btn-pause-up,
 #btn-pause-down {
-  background: rgba(232,35,26,0.2);
-  border-color: rgba(232,35,26,0.4);
+  background: rgba(232,35,26,0.2) !important;
+  border-color: rgba(232,35,26,0.4) !important;
   opacity: 0.8;
 }
 
 #btn-pause-up:hover,
 #btn-pause-down:hover {
   opacity: 1;
-  background: rgba(232,35,26,0.3);
-  border-color: rgba(232,35,26,0.5);
+  background: rgba(232,35,26,0.3) !important;
+  border-color: rgba(232,35,26,0.5) !important;
 }
 
 #btn-pause-up:active, #btn-pause-up.pressed,
 #btn-pause-down:active, #btn-pause-down.pressed {
   opacity: 1;
-  background: rgba(232,35,26,0.4);
-  border-color: rgba(232,35,26,0.6);
-  box-shadow: 0 4px 12px rgba(232,35,26,0.3), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 16px rgba(232,35,26,0.25);
+  background: rgba(232,35,26,0.4) !important;
+  border-color: rgba(232,35,26,0.6) !important;
+  box-shadow: 0 4px 12px rgba(232,35,26,0.3), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 16px rgba(232,35,26,0.25) !important;
 }
 
 /* Show controls only on touch devices */
