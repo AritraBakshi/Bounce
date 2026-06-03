@@ -90,6 +90,7 @@ html, body {
   align-items: center;
   gap: 2rem !important;
 }
+
 .loading-ball {
   width: clamp(60px, 8vw, 140px);
   height: clamp(60px, 8vw, 140px);
@@ -146,21 +147,19 @@ html, body {
   width: 100%;
   height: auto;
   display: none;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
   padding: 0 16px;
   pointer-events: none;
   z-index: 50;
 }
 
-/* Left group: left button + up button (stacked vertically) */
+/* Bottom Left: Left button (gameplay/pause) or Up button (menu) */
 #mobile-left {
-  position: absolute;
-  bottom: 0;
-  left: 16px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 12px;
   pointer-events: all;
 }
 
@@ -172,21 +171,20 @@ html, body {
   display: none;
 }
 
-/* Center: jump button */
+/* Bottom Center: Jump button */
 #mobile-center {
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   pointer-events: all;
 }
 
-/* Right group: right button + down button (stacked vertically) */
+/* Bottom Right: Right button (gameplay/pause) or Down button (menu) */
 #mobile-right {
-  position: absolute;
-  bottom: 0;
-  right: 16px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 12px;
   pointer-events: all;
 }
 
@@ -198,7 +196,24 @@ html, body {
   display: none;
 }
 
-/* Top controls: Mute and Escape */
+/* Pause mode extra buttons: side-by-side with Left/Right */
+#btn-pause-up {
+  position: fixed;
+  bottom: 20px;
+  left: 82px;
+  display: none !important;
+  pointer-events: all !important;
+}
+
+#btn-pause-down {
+  position: fixed;
+  bottom: 20px;
+  right: 82px;
+  display: none !important;
+  pointer-events: all !important;
+}
+
+/* Top Left: Mute button (gameplay/pause only) */
 #btn-mute {
   position: fixed;
   top: 20px;
@@ -207,6 +222,7 @@ html, body {
   pointer-events: all !important;
 }
 
+/* Top Right: Escape button (all game states) */
 #btn-escape {
   position: fixed;
   top: 20px;
@@ -273,8 +289,15 @@ html, body {
   box-shadow: 0 4px 12px rgba(232,35,26,0.4), inset 0 1px 2px rgba(255,255,255,0.2), 0 0 24px rgba(232,35,26,0.5);
 }
 
-/* Small buttons (mute, escape) */
+/* Small buttons (mute, escape, pause mode up/down) */
 .ctrl-btn-small {
+  width: 48px;
+  height: 48px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.ctrl-btn-pause {
   width: 48px;
   height: 48px;
   font-size: 1.2rem;
@@ -318,6 +341,28 @@ html, body {
   box-shadow: 0 4px 12px rgba(232,35,26,0.3), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 16px rgba(232,35,26,0.25);
 }
 
+#btn-pause-up,
+#btn-pause-down {
+  background: rgba(232,35,26,0.2);
+  border-color: rgba(232,35,26,0.4);
+  opacity: 0.8;
+}
+
+#btn-pause-up:hover,
+#btn-pause-down:hover {
+  opacity: 1;
+  background: rgba(232,35,26,0.3);
+  border-color: rgba(232,35,26,0.5);
+}
+
+#btn-pause-up:active, #btn-pause-up.pressed,
+#btn-pause-down:active, #btn-pause-down.pressed {
+  opacity: 1;
+  background: rgba(232,35,26,0.4);
+  border-color: rgba(232,35,26,0.6);
+  box-shadow: 0 4px 12px rgba(232,35,26,0.3), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 16px rgba(232,35,26,0.25);
+}
+
 /* Show controls only on touch devices */
 @media (hover: none) and (pointer: coarse) {
   #mobile-controls {
@@ -344,7 +389,8 @@ html, body {
     font-size: 1.5rem;
   }
 
-  .ctrl-btn-small {
+  .ctrl-btn-small,
+  .ctrl-btn-pause {
     width: 44px;
     height: 44px;
     font-size: 1rem;
@@ -355,9 +401,12 @@ html, body {
     top: 12px;
   }
 
-  #mobile-left,
-  #mobile-right {
-    gap: 6px;
+  #btn-pause-up {
+    left: 72px;
+  }
+
+  #btn-pause-down {
+    right: 72px;
   }
 }
 
