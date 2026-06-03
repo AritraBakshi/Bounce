@@ -139,55 +139,85 @@ html, body {
 
 /* ── Mobile Controls ── */
 #mobile-controls {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
-  left: 0; right: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
   display: none;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   padding: 0 16px;
   pointer-events: none;
   z-index: 50;
 }
 
-/* Left panel: movement + menu down */
+/* Left group: left button + up button (stacked vertically) */
 #mobile-left {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   pointer-events: all;
 }
 
-#mobile-left > button:first-child {
-  order: 1; /* btn-left */
+#mobile-left #btn-left {
+  display: none;
 }
 
-#mobile-left > button:last-child {
-  order: 2; /* btn-down */
-  align-self: flex-start;
-  margin-left: 4px;
+#mobile-left #btn-up {
+  display: none;
 }
 
-/* Right panel: jump + menu up */
-#mobile-right {
+/* Center: jump button */
+#mobile-center {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  pointer-events: all;
   align-items: flex-end;
+  pointer-events: all;
 }
 
-#mobile-right > button:first-child {
-  order: 1; /* btn-up - secondary */
-  opacity: 0.7;
+/* Right group: right button + down button (stacked vertically) */
+#mobile-right {
+  position: absolute;
+  bottom: 0;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: all;
 }
 
-#mobile-right > button:last-child {
-  order: 2; /* btn-jump - primary */
+#mobile-right #btn-right {
+  display: none;
 }
 
+#mobile-right #btn-down {
+  display: none;
+}
+
+/* Top controls: Mute and Escape */
+#btn-mute {
+  position: fixed;
+  top: 20px;
+  left: 16px;
+  display: none !important;
+  pointer-events: all !important;
+}
+
+#btn-escape {
+  position: fixed;
+  top: 20px;
+  right: 16px;
+  display: none !important;
+  pointer-events: all !important;
+}
+
+/* Base button styles */
 .ctrl-btn {
-  width: 56px; 
+  width: 56px;
   height: 56px;
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,0.3);
@@ -203,9 +233,7 @@ html, body {
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-tap-highlight-color: transparent;
   touch-action: none;
-  box-shadow: 
-    0 8px 16px rgba(0,0,0,0.3),
-    inset 0 1px 2px rgba(255,255,255,0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.1);
 }
 
 .ctrl-btn:hover {
@@ -213,96 +241,124 @@ html, body {
   border-color: rgba(255,255,255,0.4);
 }
 
-.ctrl-btn:active, 
+.ctrl-btn:active,
 .ctrl-btn.pressed {
   background: rgba(232,35,26,0.45);
   border-color: rgba(255,255,255,0.6);
   color: rgba(255,255,255,0.95);
   transform: scale(0.92);
-  box-shadow: 
-    0 4px 12px rgba(0,0,0,0.4),
-    inset 0 1px 2px rgba(255,255,255,0.15),
-    0 0 20px rgba(232,35,26,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.15), 0 0 20px rgba(232,35,26,0.3);
 }
 
-/* Jump button: larger and more prominent */
-#btn-jump {
-  width: 68px; 
+/* Large jump button */
+.ctrl-btn-large {
+  width: 68px;
   height: 68px;
   font-size: 1.9rem;
   background: rgba(232,35,26,0.3);
   border-color: rgba(232,35,26,0.6);
   color: rgba(255,255,255,0.9);
-  box-shadow: 
-    0 8px 16px rgba(232,35,26,0.2),
-    inset 0 1px 2px rgba(255,255,255,0.15);
+  box-shadow: 0 8px 16px rgba(232,35,26,0.2), inset 0 1px 2px rgba(255,255,255,0.15);
 }
 
-#btn-jump:hover {
+.ctrl-btn-large:hover {
   background: rgba(232,35,26,0.4);
   border-color: var(--red-light);
 }
 
-#btn-jump:active, 
-#btn-jump.pressed {
+.ctrl-btn-large:active,
+.ctrl-btn-large.pressed {
   background: rgba(232,35,26,0.6);
   border-color: var(--red-light);
-  box-shadow: 
-    0 4px 12px rgba(232,35,26,0.4),
-    inset 0 1px 2px rgba(255,255,255,0.2),
-    0 0 24px rgba(232,35,26,0.5);
+  box-shadow: 0 4px 12px rgba(232,35,26,0.4), inset 0 1px 2px rgba(255,255,255,0.2), 0 0 24px rgba(232,35,26,0.5);
 }
 
-/* Menu navigation buttons: secondary styling */
-#btn-up,
-#btn-down {
+/* Small buttons (mute, escape) */
+.ctrl-btn-small {
+  width: 48px;
+  height: 48px;
+  font-size: 1.2rem;
   opacity: 0.8;
-  transition: opacity 0.2s ease, all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#btn-up:hover,
-#btn-down:hover {
+#btn-mute {
+  background: rgba(255,215,0,0.2);
+  border-color: rgba(255,215,0,0.4);
+  color: rgba(255,215,0,0.9);
+}
+
+#btn-mute:hover {
   opacity: 1;
-  background: rgba(232,35,26,0.2);
-  border-color: rgba(232,35,26,0.4);
+  background: rgba(255,215,0,0.3);
+  border-color: rgba(255,215,0,0.5);
 }
 
-#btn-up:active, #btn-up.pressed,
-#btn-down:active, #btn-down.pressed {
+#btn-mute:active,
+#btn-mute.pressed {
+  background: rgba(255,215,0,0.5);
+  border-color: rgba(255,215,0,0.7);
+  box-shadow: 0 4px 12px rgba(255,215,0,0.2), inset 0 1px 2px rgba(255,255,255,0.15), 0 0 16px rgba(255,215,0,0.3);
+}
+
+#btn-escape {
+  background: rgba(232,35,26,0.25);
+  border-color: rgba(232,35,26,0.5);
+}
+
+#btn-escape:hover {
   opacity: 1;
   background: rgba(232,35,26,0.35);
-  border-color: rgba(232,35,26,0.5);
-  box-shadow: 
-    0 4px 12px rgba(0,0,0,0.3),
-    inset 0 1px 2px rgba(255,255,255,0.1),
-    0 0 16px rgba(232,35,26,0.25);
+  border-color: rgba(232,35,26,0.6);
 }
 
-/* Mobile controls: responsive sizing for smaller devices */
+#btn-escape:active,
+#btn-escape.pressed {
+  background: rgba(232,35,26,0.5);
+  border-color: rgba(232,35,26,0.7);
+  box-shadow: 0 4px 12px rgba(232,35,26,0.3), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 16px rgba(232,35,26,0.25);
+}
+
+/* Show controls only on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  #mobile-controls {
+    display: flex;
+  }
+}
+
+/* Responsive sizing */
 @media (max-height: 600px) {
+  #mobile-controls {
+    bottom: 12px;
+    padding: 0 12px;
+  }
+
   .ctrl-btn {
     width: 48px;
     height: 48px;
     font-size: 1.3rem;
   }
-  #btn-jump {
+
+  .ctrl-btn-large {
     width: 56px;
     height: 56px;
     font-size: 1.5rem;
   }
-  #mobile-controls {
-    bottom: 12px;
-    padding: 0 12px;
+
+  .ctrl-btn-small {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
   }
+
+  #btn-mute,
+  #btn-escape {
+    top: 12px;
+  }
+
   #mobile-left,
   #mobile-right {
     gap: 6px;
   }
-}
-
-/* Show controls only on touch devices */
-@media (hover: none) and (pointer: coarse) {
-  #mobile-controls { display: flex; }
 }
 
 canvas { outline: none; }
@@ -334,6 +390,7 @@ button, .ctrl-btn, .menu-btn, .ui-text, .score-text {
   font-size: calc(var(--font-base) * 0.95);
   color: #ffd700;
 }
+
 .text-wrap {
   white-space: pre-line;
   word-break: break-word;
@@ -357,10 +414,12 @@ button, .ctrl-btn, .menu-btn, .ui-text, .score-text {
   line-height: 1.27;
   gap: 1.6em;
 }
+
 .menu-row {
   margin: 0.9em 0;
   min-height: 2em;
 }
+
 .menu-options {
   margin-bottom: 1em;
 }
@@ -389,113 +448,4 @@ body {
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* ── NEW BUTTONS (Escape, Right, Mute) ── */
-
-/* Escape button: top-left positioning */
-#btn-escape {
-  position: absolute;
-  bottom: auto;
-  top: 20px;
-  left: 16px;
-  width: 48px;
-  height: 48px;
-  font-size: 1.4rem;
-  background: rgba(232,35,26,0.25);
-  border-color: rgba(232,35,26,0.5);
-  opacity: 0.7;
-}
-
-#btn-escape:hover {
-  opacity: 1;
-  background: rgba(232,35,26,0.35);
-  border-color: rgba(232,35,26,0.6);
-}
-
-#btn-escape:active,
-#btn-escape.pressed {
-  background: rgba(232,35,26,0.5);
-  border-color: rgba(232,35,26,0.7);
-  box-shadow: 
-    0 4px 12px rgba(232,35,26,0.3),
-    inset 0 1px 2px rgba(255,255,255,0.1),
-    0 0 16px rgba(232,35,26,0.25);
-}
-
-/* Right button: right side movement */
-#btn-right {
-  opacity: 0.8;
-  order: 3;
-}
-
-#btn-right:hover {
-  opacity: 1;
-  background: rgba(232,35,26,0.2);
-  border-color: rgba(232,35,26,0.4);
-}
-
-#btn-right:active,
-#btn-right.pressed {
-  opacity: 1;
-  background: rgba(232,35,26,0.35);
-  border-color: rgba(232,35,26,0.5);
-  box-shadow: 
-    0 4px 12px rgba(0,0,0,0.3),
-    inset 0 1px 2px rgba(255,255,255,0.1),
-    0 0 16px rgba(232,35,26,0.25);
-}
-
-/* Mute button: center-top positioning */
-#btn-mute {
-  position: absolute;
-  bottom: auto;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 52px;
-  height: 52px;
-  font-size: 1.5rem;
-  background: rgba(255,215,0,0.2);
-  border-color: rgba(255,215,0,0.4);
-  color: rgba(255,215,0,0.9);
-  opacity: 0.8;
-  pointer-events: all;
-}
-
-#btn-mute:hover {
-  opacity: 1;
-  background: rgba(255,215,0,0.3);
-  border-color: rgba(255,215,0,0.5);
-}
-
-#btn-mute:active,
-#btn-mute.pressed {
-  background: rgba(255,215,0,0.5);
-  border-color: rgba(255,215,0,0.7);
-  box-shadow: 
-    0 4px 12px rgba(255,215,0,0.2),
-    inset 0 1px 2px rgba(255,255,255,0.15),
-    0 0 16px rgba(255,215,0,0.3);
-}
-
-/* Fix mobile-controls to be position: relative for absolute positioning */
-#mobile-controls {
-  position: relative;
-}
-
-/* Responsive: adjust top spacing for smaller screens */
-@media (max-height: 600px) {
-  #btn-escape, #btn-mute {
-    top: 12px;
-    width: 44px;
-    height: 44px;
-    font-size: 1.1rem;
-  }
-  
-  #btn-right {
-    width: 48px;
-    height: 48px;
-    font-size: 1.3rem;
-  }
 }
