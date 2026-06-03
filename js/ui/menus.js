@@ -19,24 +19,13 @@ class MenuSystem {
     this._muted  = Helpers.load('muted', false);
     this._audioRef = null; // set by Game after construction
 
-    // Arrow key nav for menus (separate from game input which flushes each frame)
-    this._arrowUp   = false;
-    this._arrowDown = false;
-    this._prevArrowUp   = false;
-    this._prevArrowDown = false;
+    // M key = mute toggle (works in pause without consuming confirm)
     window.addEventListener('keydown', e => {
-      if (e.code === 'ArrowUp'   || e.code === 'KeyW') this._arrowUp   = true;
-      if (e.code === 'ArrowDown' || e.code === 'KeyS') this._arrowDown = true;
-      // M key = mute toggle (works in pause without consuming confirm)
       if (e.code === 'KeyM' && this.screen === 'pause') {
         this._muted = !this._muted;
         Helpers.save('muted', this._muted);
         if (this._audioRef) this._audioRef.setMute(this._muted);
       }
-    });
-    window.addEventListener('keyup', e => {
-      if (e.code === 'ArrowUp'   || e.code === 'KeyW') this._arrowUp   = false;
-      if (e.code === 'ArrowDown' || e.code === 'KeyS') this._arrowDown = false;
     });
 
     // Mouse / touch support
@@ -152,16 +141,12 @@ class MenuSystem {
   }
 
 
-  // Key helpers — rising-edge detection for arrow keys
+  // Key helpers — now uses unified input from InputManager
   _justUp(inp) {
-    const edge = this._arrowUp && !this._prevArrowUp;
-    this._prevArrowUp = this._arrowUp;
-    return edge;
+    return inp.menuUp;  // Now uses unified input from InputManager
   }
   _justDown(inp) {
-    const edge = this._arrowDown && !this._prevArrowDown;
-    this._prevArrowDown = this._arrowDown;
-    return edge;
+    return inp.menuDown;  // Now uses unified input from InputManager
   }
   _justEnter(inp) { return false; }
 
