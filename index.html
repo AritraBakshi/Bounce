@@ -11,22 +11,30 @@
 <body>
   <div id="game-wrapper">
     <canvas id="gameCanvas"></canvas>
+    
     <div id="mobile-controls">
-      <!-- Left Side: Movement + Down Navigation + Escape -->
+      <!-- Left button group -->
       <div id="mobile-left">
-        <button class="ctrl-btn" id="btn-left" aria-label="Move Left">&#9664;</button>
-        <button class="ctrl-btn" id="btn-down" aria-label="Menu Down / Move Down">&#9660;</button>
-        <button class="ctrl-btn" id="btn-escape" aria-label="Pause / Resume">⏸</button>
+        <button class="ctrl-btn" id="btn-left" aria-label="Move Left" data-mode="gameplay">◄</button>
+        <button class="ctrl-btn" id="btn-up" aria-label="Menu Up" data-mode="menu">▲</button>
       </div>
-      <!-- Right Side: Jump/Select + Up Navigation + Right Movement -->
+
+      <!-- Center button -->
+      <div id="mobile-center">
+        <button class="ctrl-btn ctrl-btn-large" id="btn-jump" aria-label="Jump / Select">●</button>
+      </div>
+
+      <!-- Right button group -->
       <div id="mobile-right">
-        <button class="ctrl-btn" id="btn-up" aria-label="Menu Up / Move Up">&#9650;</button>
-        <button class="ctrl-btn" id="btn-jump" aria-label="Jump / Select">●</button>
-        <button class="ctrl-btn" id="btn-right" aria-label="Move Right">&#9654;</button>
+        <button class="ctrl-btn" id="btn-right" aria-label="Move Right" data-mode="gameplay">►</button>
+        <button class="ctrl-btn" id="btn-down" aria-label="Menu Down" data-mode="menu">▼</button>
       </div>
-      <!-- Top Center: Mute Button -->
-      <button class="ctrl-btn" id="btn-mute" aria-label="Mute / Unmute">♪</button>
+
+      <!-- Top controls: Mute (left) and Escape (right) -->
+      <button class="ctrl-btn ctrl-btn-small" id="btn-mute" aria-label="Mute / Unmute" data-mode="gameplay">♪</button>
+      <button class="ctrl-btn ctrl-btn-small" id="btn-escape" aria-label="Pause / Resume" data-mode="gameplay">⏸</button>
     </div>
+
     <div id="loading-screen">
       <div class="loading-content">
         <div class="loading-ball"></div>
@@ -66,6 +74,7 @@
 
   <!-- Game Bootstrapper -->
   <script src="js/game.js" defer></script>
+  <script src="js/ui/mobile-controls.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
