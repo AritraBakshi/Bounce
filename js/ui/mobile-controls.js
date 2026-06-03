@@ -37,8 +37,21 @@ class MobileControls {
     this._updateButtonVisibility();
   }
 
+  _show(btn) {
+    if (btn) {
+      btn.style.removeProperty('display');
+      btn.classList.remove('hidden-btn');
+    }
+  }
+
+  _hide(btn) {
+    if (btn) {
+      btn.classList.add('hidden-btn');
+    }
+  }
+
   _updateButtonVisibility() {
-    if (!this.btnLeft) return; // Not ready yet
+    if (!this.btnLeft) return;
 
     const isGameplay = this.gameState === 'playing';
     const isPause = this.gameState === 'paused';
@@ -49,38 +62,36 @@ class MobileControls {
 
     if (isGameplay) {
       // GAMEPLAY: Left | Jump | Right | Mute (top-left) | Escape (top-right)
-      this.btnLeft.style.display = 'flex';
-      this.btnRight.style.display = 'flex';
-      this.btnJump.style.display = 'flex';
-      this.btnMute.style.display = 'flex';
-      this.btnEscape.style.display = 'flex';
+      this._show(this.btnLeft);
+      this._show(this.btnRight);
+      this._show(this.btnJump);
+      this._show(this.btnMute);
+      this._show(this.btnEscape);
     } 
     else if (isPause) {
       // PAUSE: [Left + Up] | Jump | [Right + Down] | Mute (top-left) | Escape (top-right)
-      this.btnLeft.style.display = 'flex';
-      this.btnRight.style.display = 'flex';
-      this.btnUp.style.display = 'flex';
-      this.btnDown.style.display = 'flex';
-      this.btnJump.style.display = 'flex';
-      this.btnPauseUp.style.display = 'flex';
-      this.btnPauseDown.style.display = 'flex';
-      this.btnMute.style.display = 'flex';
-      this.btnEscape.style.display = 'flex';
+      this._show(this.btnLeft);
+      this._show(this.btnRight);
+      this._show(this.btnUp);
+      this._show(this.btnDown);
+      this._show(this.btnJump);
+      this._show(this.btnPauseUp);
+      this._show(this.btnPauseDown);
+      this._show(this.btnMute);
+      this._show(this.btnEscape);
     } 
     else if (isMenu) {
       // MENU: Up | Jump | Down | Escape (top-right) — NO MUTE
-      this.btnUp.style.display = 'flex';
-      this.btnDown.style.display = 'flex';
-      this.btnJump.style.display = 'flex';
-      this.btnEscape.style.display = 'flex';
+      this._show(this.btnUp);
+      this._show(this.btnDown);
+      this._show(this.btnJump);
+      this._show(this.btnEscape);
     }
   }
 
   _hideAll() {
     [this.btnLeft, this.btnRight, this.btnUp, this.btnDown, this.btnJump, this.btnMute, this.btnEscape, this.btnPauseUp, this.btnPauseDown]
-      .forEach(btn => {
-        if (btn) btn.style.display = 'none';
-      });
+      .forEach(btn => this._hide(btn));
   }
 }
 
