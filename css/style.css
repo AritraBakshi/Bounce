@@ -390,3 +390,112 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ── NEW BUTTONS (Escape, Right, Mute) ── */
+
+/* Escape button: top-left positioning */
+#btn-escape {
+  position: absolute;
+  bottom: auto;
+  top: 20px;
+  left: 16px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+  background: rgba(232,35,26,0.25);
+  border-color: rgba(232,35,26,0.5);
+  opacity: 0.7;
+}
+
+#btn-escape:hover {
+  opacity: 1;
+  background: rgba(232,35,26,0.35);
+  border-color: rgba(232,35,26,0.6);
+}
+
+#btn-escape:active,
+#btn-escape.pressed {
+  background: rgba(232,35,26,0.5);
+  border-color: rgba(232,35,26,0.7);
+  box-shadow: 
+    0 4px 12px rgba(232,35,26,0.3),
+    inset 0 1px 2px rgba(255,255,255,0.1),
+    0 0 16px rgba(232,35,26,0.25);
+}
+
+/* Right button: right side movement */
+#btn-right {
+  opacity: 0.8;
+  order: 3;
+}
+
+#btn-right:hover {
+  opacity: 1;
+  background: rgba(232,35,26,0.2);
+  border-color: rgba(232,35,26,0.4);
+}
+
+#btn-right:active,
+#btn-right.pressed {
+  opacity: 1;
+  background: rgba(232,35,26,0.35);
+  border-color: rgba(232,35,26,0.5);
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.3),
+    inset 0 1px 2px rgba(255,255,255,0.1),
+    0 0 16px rgba(232,35,26,0.25);
+}
+
+/* Mute button: center-top positioning */
+#btn-mute {
+  position: absolute;
+  bottom: auto;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  font-size: 1.5rem;
+  background: rgba(255,215,0,0.2);
+  border-color: rgba(255,215,0,0.4);
+  color: rgba(255,215,0,0.9);
+  opacity: 0.8;
+  pointer-events: all;
+}
+
+#btn-mute:hover {
+  opacity: 1;
+  background: rgba(255,215,0,0.3);
+  border-color: rgba(255,215,0,0.5);
+}
+
+#btn-mute:active,
+#btn-mute.pressed {
+  background: rgba(255,215,0,0.5);
+  border-color: rgba(255,215,0,0.7);
+  box-shadow: 
+    0 4px 12px rgba(255,215,0,0.2),
+    inset 0 1px 2px rgba(255,255,255,0.15),
+    0 0 16px rgba(255,215,0,0.3);
+}
+
+/* Fix mobile-controls to be position: relative for absolute positioning */
+#mobile-controls {
+  position: relative;
+}
+
+/* Responsive: adjust top spacing for smaller screens */
+@media (max-height: 600px) {
+  #btn-escape, #btn-mute {
+    top: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+  
+  #btn-right {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+}
