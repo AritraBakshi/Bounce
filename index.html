@@ -14,26 +14,32 @@
     <canvas id="gameCanvas"></canvas>
     
     <div id="mobile-controls">
-      <!-- Left button group -->
+      <!-- Bottom Left: Left button (gameplay/pause) or Up button (menu) -->
       <div id="mobile-left">
         <button class="ctrl-btn" id="btn-left" aria-label="Move Left">◄</button>
         <button class="ctrl-btn" id="btn-up" aria-label="Menu Up">▲</button>
       </div>
 
-      <!-- Center button -->
+      <!-- Bottom Center: Jump button -->
       <div id="mobile-center">
         <button class="ctrl-btn ctrl-btn-large" id="btn-jump" aria-label="Jump / Select">●</button>
       </div>
 
-      <!-- Right button group -->
+      <!-- Bottom Right: Right button (gameplay/pause) or Down button (menu) -->
       <div id="mobile-right">
         <button class="ctrl-btn" id="btn-right" aria-label="Move Right">►</button>
         <button class="ctrl-btn" id="btn-down" aria-label="Menu Down">▼</button>
       </div>
 
-      <!-- Top controls: Mute (left) and Escape (right) -->
+      <!-- Top Left: Mute button (gameplay/pause only) -->
       <button class="ctrl-btn ctrl-btn-small" id="btn-mute" aria-label="Mute / Unmute">♪</button>
-      <button class="ctrl-btn ctrl-btn-small" id="btn-escape" aria-label="Pause / Resume">⏸</button>
+
+      <!-- Top Right: Escape button (all game states) -->
+      <button class="ctrl-btn ctrl-btn-small" id="btn-escape" aria-label="Pause / Resume / Back">⏸</button>
+
+      <!-- Pause Mode Extra Buttons: Up and Down beside Left and Right (side by side) -->
+      <button class="ctrl-btn ctrl-btn-pause" id="btn-pause-up" aria-label="Menu Up (Pause)">▲</button>
+      <button class="ctrl-btn ctrl-btn-pause" id="btn-pause-down" aria-label="Menu Down (Pause)">▼</button>
     </div>
 
     <div id="loading-screen">
