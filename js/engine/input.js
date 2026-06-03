@@ -23,6 +23,9 @@ class InputManager {
     /** Gamepad axes snapshot */
     this._gp = null;
 
+    /** Track if menu is currently open (set by external caller) */
+    this.menuOpen = false;
+
     this._bindKeyboard();
     this._bindMobileButtons();
     this._bindGamepad();
@@ -99,8 +102,8 @@ class InputManager {
     if (!gp) return;
     // Axis 0: left stick X
     const axisX = gp.axes[0] || 0;
-    if (axisX < -0.3) this._keys['ArrowLeft']  = true;
-    if (axisX >  0.3) this._keys['ArrowRight'] = true;
+    if (axisX < -0.3) this._keys['GamepadLeft']  = true;
+    if (axisX >  0.3) this._keys['GamepadRight'] = true;
     // Axis 1: left stick Y (for menu navigation)
     const axisY = gp.axes[1] || 0;
     if (axisY < -0.3) this._keys['GamepadUp'] = true;
@@ -125,9 +128,16 @@ class InputManager {
   flush() {
     this._pollGamepad();
 
-    const left  = !!(this._keys['ArrowLeft']  || this._keys['KeyA'] || this._mobile.left);
-    const right = !!(this._keys['ArrowRight'] || this._keys['KeyD'] || this._mobile.right);
-    const jump  = !!(this._keys['ArrowUp']    || this._keys['KeyW'] || this._keys['Space'] || this._mobile.jump || this._keys['GamepadJump']);
+    const left  = !!(this._keys['ArrowLeft']  || this._keys['KeyA'] || this._mobile.left || this._keys['GamepadLeft']);
+    const right = !!(this._keys['ArrowRight'] || this._keys['KeyD'] || this._mobile.right || this._keys['GamepadRight']);
+    
+    // Jump: Only when menu is NOT open
+    // When menu is open, ArrowUp triggers menuUp instead
+    const jump  = !this.menuOpen && !!(
+      this._keys['ArrowUp']    || this._keys['KeyW'] || this._keys['Space'] || 
+      this._mobile.jump || this._keys['GamepadJump']
+    );
+    
     const pause = !!(this._justPressed['Escape'] || this._justPressed['KeyP']);
 
     // Menu navigation: separate from jump
@@ -146,7 +156,7 @@ class InputManager {
       this._justPressed['GamepadDown']
     );
 
-    const jumpJustPressed = !!(
+    const jumpJustPressed = !this.menuOpen && !!(
       this._justPressed['ArrowUp']   ||
       this._justPressed['KeyW']      ||
       this._justPressed['Space']     ||
