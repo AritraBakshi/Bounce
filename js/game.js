@@ -127,31 +127,31 @@ class Game {
   }
 
   /* ── Update ── */
-_update(dt) {
-  // Update InputManager with current menu state
-  this.input.menuOpen = this.menus.isOpen;
-  
-  // Update mobile button visibility based on game state
-  if (typeof mobileControls !== 'undefined') {
-    mobileControls.updateState(this._state);
-  }
-  
-  this.input.flush();
-  const inp = this.input.state;
+  _update(dt) {
+    // Update InputManager with current menu state
+    this.input.menuOpen = this.menus.isOpen;
+    
+    // Update mobile button visibility based on game state
+    if (typeof mobileControls !== 'undefined') {
+      mobileControls.updateState(this._state);
+    }
+    
+    this.input.flush();
+    const inp = this.input.state;
 
-  switch (this._state) {
-    case 'menu':
-      this._updateMenu(); break;
-    case 'playing':
-      if (inp.pause) { this._pause(); break; }
-      this._updatePlaying(dt); break;
-    case 'paused':
-      this._updatePaused(); break;
-    case 'gameover':
-    case 'victory':
-      this._updateEndScreen(); break;
+    switch (this._state) {
+      case 'menu':
+        this._updateMenu(); break;
+      case 'playing':
+        if (inp.pause) { this._pause(); break; }
+        this._updatePlaying(dt); break;
+      case 'paused':
+        this._updatePaused(); break;
+      case 'gameover':
+      case 'victory':
+        this._updateEndScreen(); break;
+    }
   }
-}
 
   /* ── Menu state ── */
   _updateMenu() {
