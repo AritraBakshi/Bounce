@@ -64,6 +64,7 @@ BOUNCE/
 │   ├── game.js
 │   │
 │   ├── engine/
+│   │   ├── EventBus.js
 │   │   ├── audio.js
 │   │   ├── camera.js
 │   │   ├── collision.js
@@ -81,7 +82,8 @@ BOUNCE/
 │   │
 │   ├── ui/
 │   │   ├── hud.js
-│   │   └── menus.js
+│   │   ├── menus.js
+|   |   └── mobile-controls.js
 │   │
 │   ├── levels/
 │   │   └── levelLoader.js
@@ -91,12 +93,15 @@ BOUNCE/
 │       ├── helpers.js
 │       └── math.js
 │
-└── levels/
-    ├── level1.json
-    ├── level2.json
-    ├── level3.json
-    ├── level4.json
-    └── level5.json
+├── levels/
+|   ├── level1.json
+|   ├── level2.json
+|   ├── level3.json
+|   ├── level4.json
+|   └── level5.json
+|
+└── scripts/
+    └── validate_levels.py
 ```
 
 ---
